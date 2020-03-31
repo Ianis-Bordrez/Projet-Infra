@@ -3,15 +3,43 @@
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <title>Test List Music</title>
+        <meta name="desc" content="Page avec toutes les musique">
+        <link href="static/css/music.css" rel="stylesheet" type="text/css">
+        <title>All music</title>
     </head>
 
     <body>
-        {% for music in musicList %}
-            <h2>{{music}}</h2>
-            <audio controls>
-                <source src="static/music/{{music}}">
-            </audio>
-        {% endfor %}
+        <h1>Toutes les musiques</h1>
+        <input type="text" id="search_bar" onkeyup="search_bar()" placeholder="Cherchez le titre d'une musique..." title="Type in a name">
+        <ul id="UL_music">
+            {% for music in musicList %}
+            <li class="LI_music">
+                <h2>{{music}}</h2>
+                <audio controls>
+                    <source src="static/music/{{music}}">
+                </audio>
+            </li>
+            {% endfor %}
+        </ul>
+
+
+        <script>
+            function search_bar() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("search_bar");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("UL_music");
+                li = ul.getElementsByClassName("LI_music");
+                for (i = 0; i < li.length; i++) {
+                    text = li[i].getElementsByTagName("h2")[0];
+                    txtValue = text.textContent || text.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
