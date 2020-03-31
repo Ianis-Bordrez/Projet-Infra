@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <title>Test List Music</title>
+    </head>
+
+    <body>
+        {% for music in musicList %}
+            <h2>{{music}}</h2>
+            <audio controls>
+                <source src="static/music/{{music}}">
+            </audio>
+        {% endfor %}
+    </body>
+</html>
