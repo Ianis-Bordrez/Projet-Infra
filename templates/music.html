@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <title>Streamify</title>
+
+</head>
+<body>
+
+    <div id="header">
+
+                <div id="logo" class="centertext"><img class="logo1" src="static/logo.png" alt="Logo Streamify"></div>
+                <hr>
+                <div>
+                    <ul id="menu">
+                        <li class="inc_fast"><a href="/">HOME</a></li>
+                        <li class="inc_fast"><a href="music">MUSIC</a></li>
+                        <li class="inc_fast"><a href="dashboard">DASHBOARD</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <h2>Toutes les musiques</h2>
+        <input type="text" id="search_bar" onkeyup="search_bar()" placeholder="Cherchez le titre d'une musique..." title="Type in a name">
+        <ul id="UL_music">
+            {% for music in musicList %}
+            <li class="LI_music">
+                <h2>{{music}}</h2>
+                <audio controls>
+                    <source src="static/music/{{music}}">
+                </audio>
+            </li>
+	    <br>
+            {% endfor %}
+        </ul>
+
+        <script>
+            function search_bar() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("search_bar");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("UL_music");
+                li = ul.getElementsByClassName("LI_music");
+                for (i = 0; i < li.length; i++) {
+                    text = li[i].getElementsByTagName("h2")[0];
+                    txtValue = text.textContent || text.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
