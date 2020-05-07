@@ -2,8 +2,10 @@ from flask import Flask, render_template,request
 from pathlib import Path
 
 import os
+import flask_monitoringdashboard as dashboard
 
 app = Flask(__name__, static_folder="static")
+dashboard.bind(app)
 
 @app.route("/upload", methods=["POST"])
 def upload():
