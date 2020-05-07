@@ -1,15 +1,35 @@
 <!doctype html>
 <html lang="fr">
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="desc" content="Page avec toutes les musique">
-        <link href="static/css/music.css" rel="stylesheet" type="text/css">
-        <title>All music</title>
-    </head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <title>Streamify</title>
 
-    <body>
-        <h1>Toutes les musiques</h1>
+</head>
+<body>
+
+
+    <div id="header">
+
+                <div id="logo" class="centertext"><img class="logo1" src="logo.png" alt="Logo Streamify"></div>
+                <hr>
+                <div>
+                    <ul id="menu">
+                        <li class="inc_fast"><a href="index.html">HOME</a></li>
+                        <li class="inc_fast"><a href="music.html">MUSIC</a></li>
+                        <li class="inc_fast"><a href="dashboard">DASHBOARD</a></li>
+                        
+                    </ul>
+                </div>
+
+
+
+
+
+            </div>
+        
+        <h2>Toutes les musiques</h2>
         <input type="text" id="search_bar" onkeyup="search_bar()" placeholder="Cherchez le titre d'une musique..." title="Type in a name">
         <ul id="UL_music">
             {% for music in musicList %}

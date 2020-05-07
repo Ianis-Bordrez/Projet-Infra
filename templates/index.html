@@ -2,18 +2,40 @@
 <html lang="fr">
 
 <head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
     <title>Streamify</title>
 
 </head>
 <body>
 
-    <h1>Streamify</h1>
 
+    <div id="header">
+
+        <div id="logo" class="centertext"><img class="logo1" src="logo.png" alt="Logo Streamify"></div>
+        <hr>
+        <div>
+            <ul id="menu">
+                <li class="inc_fast"><a href="index.html">HOME</a></li>
+                <li class="inc_fast"><a href="music.html">MUSIC</a></li>
+                <li class="inc_fast"><a href="dashboard">DASHBOARD</a></li>
+                
+            </ul>
+        </div>
+
+
+
+
+
+    </div>
+    <h2>What is Streamify ?</h2>
+    <p> Streamify is an online music platform where your favorite titles by a simple click. Is there a music not available in our library ? Simply add it using the button bellow.<p>
     <form method="POST" action="/upload" enctype="multipart/form-data">
     <input type="file" name="inputFile">
     <button type="submit">Valider</button>
 
-    <a href="music" target="_blank">Ecoutez vos musiques</a>
+    <a href="music.html" target="_blank">Ecoutez vos musiques</a>
 
 </body>
 </html>
